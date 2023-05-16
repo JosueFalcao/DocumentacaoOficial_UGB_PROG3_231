@@ -12,7 +12,7 @@ using Relacionamentos.Data;
 namespace Relacionamentos.Migrations
 {
     [DbContext(typeof(RelacionamentoContext))]
-    [Migration("20230516021035_inicial")]
+    [Migration("20230516224712_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -27,11 +27,11 @@ namespace Relacionamentos.Migrations
 
             modelBuilder.Entity("Relacionamentos.Models.Blog", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -48,11 +48,11 @@ namespace Relacionamentos.Migrations
 
             modelBuilder.Entity("Relacionamentos.Models.Post", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<bool>("Archived")
                         .HasColumnType("bit");
